@@ -1,6 +1,6 @@
-# Dentium — Design System
+# Dentra — Design System
 
-Dentium is a **dental practice management web app** for Indian clinics. It's the system the front-desk admin, the dentist, and the practice owner all log into to run the day — from the morning's appointment list, through the chair, to recording the payment and reading next quarter's collection-rate report.
+Dentra is a **dental practice management web app** for Indian clinics. It's the system the front-desk admin, the dentist, and the practice owner all log into to run the day — from the morning's appointment list, through the chair, to recording the payment and reading next quarter's collection-rate report.
 
 It's dense, calm, and clinical. The visual language sits on **deep teal + warm maroon**, set on a cool off-white page. It uses Inter at small sizes, lots of soft-tinted shadows, and a glassmorphic frosting on cards and modals.
 
