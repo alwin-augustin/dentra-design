@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Form inputs</title>
+<link rel="stylesheet" href="_card.css"/>
+<link rel="stylesheet" href="../source_css/base.css"/>
+<link rel="stylesheet" href="../source_css/components.css"/>
+
+</head>
+<body>
+<div class="card-root">
+<div class="col">
+  <div class="form-field">
+    <label class="field-label">Patient name <span class="required">*</span></label>
+    <input class="input" placeholder="Type to search by name, PID, or phone…"/>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="form-field">
+      <label class="field-label">Date of birth</label>
+      <input class="input" value="14 Mar 1955"/>
+    </div>
+    <div class="form-field">
+      <label class="field-label">Department</label>
+      <select class="input"><option>Oral Surgery</option><option>General Dentistry</option></select>
+    </div>
+  </div>
+  <div class="form-field">
+    <label class="field-label">Notes</label>
+    <textarea class="input" rows="2" placeholder="Optional notes…"></textarea>
+  </div>
+  <div style="font-size:11px;color:var(--fg-muted)">Field height 40px. Focus border darkens to primary-dark, with 3px tinted halo.</div>
+</div>
+</div>
+</body>
+</html>

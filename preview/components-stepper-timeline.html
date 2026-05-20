@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Timeline & treatment plan</title>
+<link rel="stylesheet" href="_card.css"/>
+<link rel="stylesheet" href="../source_css/base.css"/>
+<link rel="stylesheet" href="../source_css/components.css"/>
+
+</head>
+<body>
+<div class="card-root">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <div class="panel">
+    <div class="t-eyebrow" style="margin-bottom:8px">Visit Timeline · 4</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-dot timeline-dot-active"></div><div style="font-size:13px;font-weight:500">Extraction site review</div><div style="font-size:11px;color:var(--fg-muted)">22 May 2026 · 11:00 AM · Dr. Vikram Nair</div></div>
+      <div class="timeline-item"><div class="timeline-dot timeline-dot-cancelled"></div><div style="font-size:13px;font-weight:500">Dental cleaning consultation</div><div style="font-size:11px;color:var(--fg-muted)">17 May · Dr. Arjun Mehta</div></div>
+      <div class="timeline-item"><div class="timeline-dot timeline-dot-completed"></div><div style="font-size:13px;font-weight:500">Surgical extraction — 38</div><div style="font-size:11px;color:var(--fg-muted)">16 May · Dr. Vikram Nair</div></div>
+    </div>
+  </div>
+  <div class="tp-card">
+    <div class="tp-card-header"><div><div class="tp-title">Root Canal Treatment — Tooth 36</div><div class="tp-doctor">Dr. Rohan Kapoor · 3 sessions</div></div><span class="badge badge-confirmed">Active</span></div>
+    <div class="tp-procedures">
+      <span class="tp-procedure-chip done">Diagnosis</span>
+      <span class="tp-procedure-chip done">RCT sitting 1</span>
+      <span class="tp-procedure-chip">RCT sitting 2</span>
+      <span class="tp-procedure-chip">Crown</span>
+    </div>
+    <div class="tp-progress-bar"><div class="tp-progress-fill" style="width:50%"></div></div>
+    <div class="tp-financial-row" style="margin-top:8px"><span>Est. ₹14,500</span><span>Paid ₹6,500</span><span class="tp-outstanding">Due ₹8,000</span></div>
+  </div>
+</div>
+</div>
+</body>
+</html>

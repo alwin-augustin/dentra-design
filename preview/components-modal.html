@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Modal</title>
+<link rel="stylesheet" href="_card.css"/>
+<link rel="stylesheet" href="../source_css/base.css"/>
+<link rel="stylesheet" href="../source_css/components.css"/>
+
+</head>
+<body>
+<div class="card-root">
+<div style="position:relative;background:var(--color-surface-muted);border-radius:12px;padding:24px;display:flex;align-items:center;justify-content:center;min-height:240px">
+  <div class="modal-container" style="position:relative;animation:none;max-width:420px;width:100%">
+    <div class="modal-header"><div class="modal-title">New appointment</div><button class="modal-close">×</button></div>
+    <div class="modal-body">
+      <div style="font-size:12px;color:var(--fg-muted);margin-bottom:14px">Fill in the details below</div>
+      <div class="form-field"><label class="field-label">Patient <span class="required">*</span></label><input class="input" placeholder="Search by name, PID, or phone…"/></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary">Cancel</button>
+      <button class="btn btn-primary">Create</button>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

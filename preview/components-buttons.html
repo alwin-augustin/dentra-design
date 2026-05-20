@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Buttons</title>
+<link rel="stylesheet" href="_card.css"/>
+<link rel="stylesheet" href="../source_css/base.css"/>
+<link rel="stylesheet" href="../source_css/components.css"/>
+
+</head>
+<body>
+<div class="card-root">
+<div class="col">
+  <div class="row">
+    <button class="btn btn-primary">Save changes</button>
+    <button class="btn btn-secondary">Cancel</button>
+    <button class="btn btn-ghost">View invoice</button>
+    <button class="btn btn-ghost-neutral">Filter</button>
+  </div>
+  <div class="row">
+    <button class="btn btn-danger-solid">Delete patient</button>
+    <button class="btn btn-danger">Remove</button>
+    <button class="btn btn-primary" disabled>Disabled</button>
+    <button class="btn btn-primary btn-loading"><span class="spinner"></span> Saving…</button>
+  </div>
+  <div class="row" style="align-items:center">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+    <button class="btn btn-primary btn-xl">Extra large</button>
+  </div>
+  <div style="font-size:11px;color:var(--fg-muted)">All buttons share 6px gap, 8px radius, weight 600. Hover darkens (no scale). Focus ring is 2px primary, 2px offset.</div>
+</div>
+</div>
+</body>
+</html>

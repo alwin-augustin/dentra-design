@@ -1,0 +1,330 @@
+/* ============================================================
+   DENTIUM DESIGN SYSTEM — Colors & Type Tokens
+   Single source of truth for every brand color and text style.
+   Rule: never write a raw hex or px in component code.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+
+  /* ──────────────────────────────────────────────────────────
+     BRAND PALETTE
+     Dentium's identity sits on a deep clinical teal paired with
+     a warm dental-maroon accent. The "Den" of the wordmark is
+     maroon, "tium" is teal — the brand reads as both clinical
+     and human.
+  ────────────────────────────────────────────────────────── */
+
+  --brand-teal:           #2B555B;   /* Primary — buttons, active nav, links */
+  --brand-teal-dark:      #1F3E43;   /* Primary hover */
+  --brand-teal-light:     #A1CBD1;   /* Primary tint — ghost button hover */
+  --brand-teal-alt:       #4F868E;   /* Secondary teal — borders, accents */
+  --brand-maroon:         #622244;   /* Accent — logo "Den", notif dots */
+  --brand-maroon-dark:    #491A33;   /* Accent hover */
+
+  /* Aliases used through the codebase */
+  --color-primary:        var(--brand-teal);
+  --color-primary-dark:   var(--brand-teal-dark);
+  --color-primary-light:  var(--brand-teal-light);
+  --color-blue-alt:       var(--brand-teal-alt);
+  --color-accent:         var(--brand-maroon);
+  --color-accent-dark:    var(--brand-maroon-dark);
+  --color-purple-rare:    var(--brand-maroon);
+
+  /* ──────────────────────────────────────────────────────────
+     SURFACE
+     Cool off-white page bg keeps cards floating; surfaces step
+     up from it in tiny tonal jumps (never pure white-on-white).
+  ────────────────────────────────────────────────────────── */
+
+  --color-page-bg:        #F4F7F7;
+  --color-surface:        #FFFFFF;
+  --color-surface-subtle: #F9FAFA;
+  --color-surface-muted:  #EBF0F0;
+
+  /* ──────────────────────────────────────────────────────────
+     CHARCOAL-GREY SCALE
+     Used for all neutral text/borders. Slightly cool, never
+     true black.
+  ────────────────────────────────────────────────────────── */
+
+  --color-cg-120: #30343E;
+  --color-cg-100: #373C47;
+  --color-cg-80:  #5F636C;
+  --color-cg-60:  #9B9DA3;
+  --color-cg-30:  #C3C5C8;
+  --color-cg-10:  #EBECED;
+
+  /* ──────────────────────────────────────────────────────────
+     SEMANTIC FOREGROUND
+  ────────────────────────────────────────────────────────── */
+
+  --fg-primary:    #112337;            /* Body text, headings */
+  --fg-secondary:  var(--color-cg-80); /* Labels, secondary copy */
+  --fg-muted:      var(--color-cg-60); /* Captions, placeholders */
+  --fg-dark:       #112337;
+  --fg-on-primary: #FFFFFF;
+
+  /* ──────────────────────────────────────────────────────────
+     SEMANTIC BACKGROUND
+  ────────────────────────────────────────────────────────── */
+
+  --bg-page:       var(--color-page-bg);
+  --bg-surface:    var(--color-surface);
+  --bg-table-head: var(--color-surface-subtle);
+
+  /* ──────────────────────────────────────────────────────────
+     BORDERS & DIVIDERS
+  ────────────────────────────────────────────────────────── */
+
+  --color-divider:       #E0E2EA;
+  --color-input-border:  #9B9DA3;
+  --color-required-star: #CC1414;
+
+  /* ──────────────────────────────────────────────────────────
+     STATUS PILLS — paired bg + text per workflow state.
+     Used heavily across appointments, billing, treatment plans.
+  ────────────────────────────────────────────────────────── */
+
+  --status-scheduled-bg:    #FFE8C6;  --status-scheduled-text:    #DB7600;
+  --status-confirmed-bg:    #EEF0FE;  --status-confirmed-text:    #4845F0;
+  --status-in-progress-bg:  #EEF0FE;  --status-in-progress-text:  #4845F0;
+  --status-completed-bg:    #C6FFD2;  --status-completed-text:    #10973E;
+  --status-cancelled-bg:    #E1E8EA;  --status-cancelled-text:    #5F636C;
+  --status-no-show-bg:      #FFE4E4;  --status-no-show-text:      #CC1414;
+  --status-waiting-bg:      #FFF3E0;  --status-waiting-text:      #E65100;
+  --status-checked-in-bg:   #E8F5E9;  --status-checked-in-text:   #2E7D32;
+  --status-billing-bg:      #FFF8E1;  --status-billing-text:      #F57F17;
+  --status-missed-bg:       #FFE4E4;  --status-missed-text:       #CC1414;
+  --status-unpaid-bg:       #FFE4E4;  --status-unpaid-text:       #CC1414;
+  --status-draft-bg:        #F4F5F8;  --status-draft-text:        #5F636C;
+  --status-issued-bg:       #EEF0FE;  --status-issued-text:       #4845F0;
+  --status-paid-bg:         #C6FFD2;  --status-paid-text:         #10973E;
+  --status-partial-bg:      #FFE8C6;  --status-partial-text:      #DB7600;
+  --status-void-bg:         #E1E8EA;  --status-void-text:         #9B9DA3;
+
+  /* ──────────────────────────────────────────────────────────
+     SEMANTIC STATES
+  ────────────────────────────────────────────────────────── */
+
+  --color-success-text:    #10973E;
+  --color-success-bg:      #F0FDF4;
+  --color-success-subtle:  #E8F8ED;
+  --color-danger-text:     #CC1414;
+  --color-danger-bg:       #F23A3C;
+  --color-danger-border:   #F23A3C;
+  --color-danger-tint:     rgba(242, 58, 60, 0.05);
+  --color-warn-text:       #DB7600;
+  --color-warn-dark:       #7A3300;
+  --color-warn-bg:         #FFF7ED;
+  --color-warn-border:     #FED7AA;
+  --color-warn-strong:     #E65100;
+
+  /* ──────────────────────────────────────────────────────────
+     ACCENT / SPECIAL
+  ────────────────────────────────────────────────────────── */
+
+  --color-allergy-dot:    #E07F00;
+  --color-now-indicator:  #E53935;
+  --color-tooltip-bg:     #1C1F26;
+  --color-upi-bg:         #F3EEFF;  --color-upi-text:         #7C3AED;
+  --color-insurance-bg:   #EEF6FF;  --color-insurance-text:   #1D6AB0;
+
+  /* ──────────────────────────────────────────────────────────
+     CHART PALETTE — used in Reports
+  ────────────────────────────────────────────────────────── */
+
+  --chart-1: #4845F0;
+  --chart-2: #D46C84;
+  --chart-3: #10973E;
+  --chart-4: #DB7600;
+  --chart-5: #1E54B7;
+  --chart-6: #9747FF;
+  --chart-7: #5F636C;
+
+  /* ──────────────────────────────────────────────────────────
+     TYPOGRAPHY
+     One family, many roles. Inter, with a workhorse 400/500/600
+     range. We don't use 700 except in the wordmark itself.
+  ────────────────────────────────────────────────────────── */
+
+  --font-primary:   'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-secondary: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:      'SF Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Sizes are intentionally small — this is a dense, data-rich
+     clinical product. Body text is 13px, table cells are 12px,
+     micro-labels are 10–11px. */
+  --text-display-size:  36px;   --text-display-weight:  600;
+  --text-h1-size:       18px;   --text-h1-weight:       600;
+  --text-h2-size:       15px;   --text-h2-weight:       600;
+  --text-h3-size:       13px;   --text-h3-weight:       500;
+  --text-body-size:     13px;   --text-body-weight:     400;
+  --text-body-sm-size:  12px;
+  --text-label-size:    12px;   --text-label-weight:    600;
+  --text-input-size:    13px;   --text-input-weight:    400;
+  --text-btn-size:      13px;   --text-btn-weight:      600;
+  --text-table-th-size: 11px;   --text-table-th-weight: 600;
+  --text-nav-size:      12px;
+  --text-caption-size:  10px;
+
+  /* ──────────────────────────────────────────────────────────
+     SPACING SCALE (4px base)
+  ────────────────────────────────────────────────────────── */
+
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ──────────────────────────────────────────────────────────
+     RADIUS
+  ────────────────────────────────────────────────────────── */
+
+  --radius-sm:     8px;   /* buttons, inputs, status pills */
+  --radius-md:    12px;   /* cards, dropdowns, modals */
+  --radius-lg:    14px;   /* tables, KPI cards */
+  --radius-full:  9999px; /* badge-pill, avatars, chips */
+  --radius-avatar:50%;
+
+  /* ──────────────────────────────────────────────────────────
+     SHADOWS
+     Tinted with brand foreground (rgba 17,35,55) — never neutral
+     black — so they sit warm against the cool page bg.
+  ────────────────────────────────────────────────────────── */
+
+  --shadow-header:     0 1px 0 0 #E0E2EA;
+  --shadow-card:       0 2px 8px 0 rgba(17, 35, 55, 0.06);
+  --shadow-card-hover: 0 12px 24px 0 rgba(17, 35, 55, 0.08);
+  --shadow-modal:      0 24px 64px 0 rgba(17, 35, 55, 0.12);
+  --shadow-dropdown:   0 8px 24px 0 rgba(17, 35, 55, 0.10);
+  --shadow-drawer:     -4px 0 32px 0 rgba(17, 35, 55, 0.10);
+
+  /* ──────────────────────────────────────────────────────────
+     GLASSMORPHISM
+     Used on cards, modals, inputs for a subtle frosted feel
+     over the page bg.
+  ────────────────────────────────────────────────────────── */
+
+  --glass-bg:        rgba(255, 255, 255, 0.85);
+  --glass-bg-darker: rgba(244, 247, 247, 0.90);
+  --glass-border:    1px solid rgba(255, 255, 255, 0.8);
+  --glass-blur:      blur(12px);
+  --glass-shadow:    0 4px 20px rgba(17, 35, 55, 0.03);
+
+  /* ──────────────────────────────────────────────────────────
+     LAYOUT
+  ────────────────────────────────────────────────────────── */
+
+  --sidebar-width:    188px;
+  --header-height:     60px;
+  --table-row-height:  44px;
+  --field-height:      40px;
+
+  /* ──────────────────────────────────────────────────────────
+     MOTION
+     Short, calm, never bouncy. We use the spring easing for
+     scale-ins (modals, dropdowns) and ease-in-out for tab/ink
+     transitions. UI feedback is always ≤ 400ms.
+  ────────────────────────────────────────────────────────── */
+
+  --transition-fast:   200ms;
+  --transition-medium: 300ms;
+  --transition-slow:   500ms;
+  --ease-spring:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:       cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   Use these classes (or matching tag) rather than restating
+   font/size/weight on every component.
+   ============================================================ */
+
+.t-display,
+h1.display {
+  font-family: var(--font-primary);
+  font-size: var(--text-display-size);
+  font-weight: var(--text-display-weight);
+  color: var(--fg-primary);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+h1, .t-h1 {
+  font-family: var(--font-primary);
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  color: var(--fg-dark);
+  line-height: 1.3;
+}
+
+h2, .t-h2 {
+  font-family: var(--font-primary);
+  font-size: var(--text-h2-size);
+  font-weight: var(--text-h2-weight);
+  color: var(--fg-dark);
+  line-height: 1.4;
+}
+
+h3, .t-h3 {
+  font-family: var(--font-primary);
+  font-size: var(--text-h3-size);
+  font-weight: var(--text-h3-weight);
+  color: var(--fg-primary);
+  line-height: 1.4;
+}
+
+p, .t-body {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  color: var(--fg-primary);
+  line-height: 1.6;
+}
+
+.t-body-sm {
+  font-size: var(--text-body-sm-size);
+  color: var(--fg-secondary);
+}
+
+label, .t-label {
+  font-family: var(--font-secondary);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  color: var(--fg-primary);
+}
+
+/* Uppercase micro-label — used everywhere for table headers,
+   info-row labels, section eyebrows. */
+.t-eyebrow {
+  font-family: var(--font-secondary);
+  font-size: var(--text-table-th-size);
+  font-weight: 700;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.t-caption {
+  font-size: var(--text-caption-size);
+  color: var(--fg-muted);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm-size);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }

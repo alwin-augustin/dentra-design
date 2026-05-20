@@ -1,0 +1,149 @@
+/* ============================================================
+   Shared styles for design-system preview cards.
+   Each card is ~700×Npx, minimal chrome, raw token specimens.
+   ============================================================ */
+
+@import url('../colors_and_type.css');
+@import url('../source_css/animations.css');
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  font-family: var(--font-primary);
+  color: var(--fg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card-root {
+  width: 700px;
+  padding: 24px;
+  background: var(--bg-page);
+}
+
+/* Grid helpers */
+.row    { display: flex; flex-wrap: wrap; gap: 12px; }
+.col    { display: flex; flex-direction: column; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+
+/* Color swatch */
+.sw {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-primary);
+}
+.sw-chip {
+  height: 64px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(17,35,55,0.04);
+  box-shadow: var(--shadow-card);
+}
+.sw-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-primary);
+  line-height: 1.2;
+}
+.sw-hex {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  letter-spacing: 0.2px;
+}
+
+/* Status pill specimen */
+.pill-spec {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  line-height: 1.4;
+}
+
+/* Type specimen row */
+.type-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 110px;
+  gap: 16px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.type-row:last-child { border-bottom: none; }
+.type-row .role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.type-row .meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  text-align: right;
+}
+
+/* Token row (spacing / radius / shadow / etc) */
+.token-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 110px;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.token-row:last-child { border-bottom: none; }
+.token-row .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-primary);
+}
+.token-row .meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  text-align: right;
+}
+
+/* Spacing bar visual */
+.space-bar {
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+/* Shadow swatch */
+.shadow-card-spec {
+  width: 96px;
+  height: 64px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+}
+
+/* Radius swatch */
+.radius-spec {
+  width: 80px;
+  height: 60px;
+  background: var(--color-primary);
+}
+
+/* Component panel — used for component cards */
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+/* Re-import Dentium component CSS so spec buttons/badges look 1:1 */

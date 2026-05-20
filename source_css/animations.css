@@ -1,0 +1,188 @@
+/* ============================================================
+   DENTIUM PROTOTYPE — Keyframes & Animation Utilities
+   Standards: durations ≤ 400ms for UI feedback,
+              easing: ease-out for entrances, ease for hovers
+   ============================================================ */
+
+/* ── KEYFRAMES ──────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(24px); }
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* Spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Subtle pulse — for allergy alerts, in-chair ring */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Pulse ring — live clinic in-chair card */
+@keyframes pulseRing {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(72, 69, 240, 0.3); }
+  70%  { transform: scale(1); box-shadow: 0 0 0 10px rgba(72, 69, 240, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(72, 69, 240, 0); }
+}
+
+/* Scale pop — live total amount update */
+@keyframes popScale {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Scale in — modal, dropdown entrance */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* SVG checkmark draw — success states */
+@keyframes checkDraw {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Circle draw — success animation */
+@keyframes circleDraw {
+  from { stroke-dashoffset: 160; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Gentle bounce for empty states */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* ── ANIMATION UTILITY CLASSES ──────────────────────────── */
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-medium) ease-out both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 220ms ease-out both;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 200ms ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 200ms ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 200ms var(--ease-spring) both;
+}
+
+/* Stagger delays for list entrances */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 50ms; }
+.stagger-3 { animation-delay: 100ms; }
+.stagger-4 { animation-delay: 150ms; }
+.stagger-5 { animation-delay: 200ms; }
+.stagger-6 { animation-delay: 250ms; }
+
+/* ── SPINNER ─────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+.spinner-dark {
+  border-color: rgba(55, 60, 71, 0.2);
+  border-top-color: var(--fg-primary);
+}
+
+.spinner-primary {
+  border-color: rgba(72, 69, 240, 0.2);
+  border-top-color: var(--color-primary);
+}
+
+/* ── TAB INK BAR ─────────────────────────────────────────── */
+.tab-ink-bar {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px 2px 0 0;
+  transition: left var(--transition-medium) var(--ease-in-out),
+              width var(--transition-medium) var(--ease-in-out);
+}
+
+/* ── SKELETON SHIMMER ────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-subtle) 25%,
+    #ECEFF4 50%,
+    var(--color-surface-subtle) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* ── ALLERGY PULSE ───────────────────────────────────────── */
+.pulse-twice {
+  animation: pulse 2.4s ease 0.4s 2;
+}
+
+/* ── IN-CHAIR RING ───────────────────────────────────────── */
+.pulse-ring {
+  animation: pulseRing 2.2s ease-out infinite;
+}
+
+/* ── POP SCALE (total amount) ────────────────────────────── */
+.pop-scale {
+  animation: popScale 200ms ease;
+}
+
+/* ── FLOAT (empty state icon) ────────────────────────────── */
+.float-y {
+  animation: floatY 3s ease-in-out infinite;
+}
